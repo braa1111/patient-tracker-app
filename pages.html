@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>pages Page</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #2BACBF;
+ --primary-color-dark: #0d846c;
+  --primary-color-light: #e9f7f7;
+  --secondary-color-dark:#11856d;
+  --text-dark: #333333;
+  --text-light: #767268;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  white-space: nowrap;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color: var(--primary-color-dark);
+}
+
+img {
+  width: 100%;
+  display: flex;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.737),
+      rgba(1, 0, 0, 0.735)
+    ),
+    url("head.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.nav__container {
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.nav__logo span {
+  color: var(--primary-color);
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.link a {
+  padding: 0.5rem;
+  color: var(--primary-color-light);
+}
+
+.link a:hover {
+    color: var(--primary-color);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.header__container h1 {
+   margin-top:0;
+    margin-left: 6rem;
+  margin-bottom: 1rem;
+  max-width: 800px;
+  font-size: 3.5rem;
+  line-height: 4rem;
+  color: var(--white);
+}
+
+.header__container p {
+margin-left: 1rem;
+  margin-bottom: 1rem;
+  max-width: 800px;
+  color: var(--primary-color-light);
+}
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .notification .icon {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.8);
+            transition: color 0.3s;
+        }
+
+        .notification:hover {
+            color: var(--primary-color-dark);
+        }
+
+        .greeting {
+            color: var(--white);
+        }
+
+        .greeting h1 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .greeting p {
+            font-size: 0.75rem;
+        }
+
+        .profile-photo {
+            display: flex;
+            align-items: center;
+
+            padding: 7px 7px;
+            border-radius: 100%;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .profile-photo:hover {
+            background-color: var(--primary-color);
+        }
+
+        .patient-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        section {
+          background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: box-shadow 0.3s ease-in-out;
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        .values {
+            list-style-type: none;
+            padding: 0;
+        }
+        .values li {
+            background: var(--primary-color-light);
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .cta-button:hover {
+            background: var(--primary-color-dark);
+            transform: translateY(-2px);
+        }
+        .cta-button:active {
+            transform: translateY(0);
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            
+          }
+        .footer {
+  background-color: var(--primary-color-light);
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 400px repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer__col h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.footer__col h3 span {
+  color: var(--secondary-color-dark);
+}
+
+.footer__col h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.footer__col p {
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer__col p:hover {
+  color: var(--primary-color);
+}
+
+.footer__col i {
+  color: var(--primary-color);
+}
+
+.footer__bar {
+  background-color: var(--primary-color);
+}
+
+.footer__bar__content {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer__bar__content p {
+  font-size: 0.8rem;
+  color: var(--white);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+  color: var(--white);
+  cursor: pointer;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="section__container nav__container">
+          <div class="nav__logo">Patient<span>Tracker</span></div>
+          <ul class="nav__links">
+            <li class="link"><a href="home.html">Home</a></li>
+            <li class="link"><a href="aboutUs.html">About Us</a></li>
+            <li class="link"><a href="services.html">Services</a></li>
+            <li class="link"><a href="pages.html">Pages</a></li>
+            <li class="link"><a href="blog.html">Blog</a></li>
+          </ul>
+          <div class="profile">
+            <div class="notification">
+                <i class="bi bi-bell icon"></i>
+            </div>
+            <div class="greeting">
+                <h1>Hi, patient!</h1>
+                <p>May you alaways be healthy.</p>
+            </div>
+          <div class="profile-photo">
+                    <img src="profile.webp" alt="Profile Photo" class="patient-avatar" />
+                </div>
+        </nav>
+        <div class="section__container header__container" id="home">
+          <div class="header__content">
+            <h1>Pages</h1>
+          </div>
+            </div>
+    </header>
+
+    <div class="about-container">
+    <section class="container">
+      <h2>Empowering Healthcare with Precision and Compassion</h2>
+      <p>Welcome to <strong>Patient Tracker</strong>, where we believe that the journey to better health starts with informed and organized care. Our mission is to provide patients, caregivers, and healthcare professionals with a comprehensive, user-friendly platform that enhances communication, coordination, and management of health and wellness.</p>
+  
+      <h2>Who We Are</h2>
+      <p>At <strong>Patient Tracker</strong>, we are a dedicated team of healthcare professionals, technology enthusiasts, and patient advocates committed to revolutionizing the way health data is managed. Our team combines deep industry knowledge with innovative technology to create solutions that make healthcare more accessible, efficient, and personalized.</p>
+  
+      <h2>Our Mission</h2>
+      <p>Our mission is to empower individuals to take control of their health by providing tools that streamline the tracking and management of medical information. We understand that navigating healthcare can be complex, and we aim to simplify this process through technology that is both intuitive and reliable.</p>
+  
+      <h2>What We Do</h2>
+      <ul class="values">
+          <li><strong>Patient-Centric Solutions:</strong> Our platform offers a range of features designed to meet the unique needs of patients, including medication tracking, appointment scheduling, symptom monitoring, and secure communication with healthcare providers.</li>
+          <li><strong>Seamless Integration:</strong> We integrate with various healthcare systems to ensure that your health data is always up-to-date and accessible, providing a holistic view of your health status.</li>
+          <li><strong>Enhanced Communication:</strong> By facilitating clear and efficient communication between patients and healthcare providers, we help ensure that you receive the best possible care.</li>
+          <li><strong>Data Security:</strong> We prioritize the security and privacy of your health information. Our platform adheres to the highest standards of data protection to give you peace of mind.</li>
+      </ul>
+  
+      <h2>Our Values</h2>
+      <ul class="values">
+          <li><strong>Integrity:</strong> We are committed to providing accurate, reliable, and honest information to support your health journey.</li>
+          <li><strong>Innovation:</strong> We continuously strive to improve our technology and services to meet the evolving needs of our users.</li>
+          <li><strong>Compassion:</strong> We understand the challenges of managing health and approach every aspect of our work with empathy and understanding.</li>
+          <li><strong>Collaboration:</strong> We work closely with healthcare providers, patients, and caregivers to create solutions that truly make a difference.</li>
+      </ul>
+  
+      <h2>Join Us on Your Health Journey</h2>
+      <p>We invite you to explore our platform and see how <strong>Patient Tracker</strong> can enhance your healthcare experience. Whether you’re managing a chronic condition, coordinating care for a loved one, or simply looking for a better way to stay on top of your health, we’re here to support you every step of the way.</p>
+      <p>Thank you for choosing <strong>Patient Tracker</strong>. Together, we can make managing your health easier and more effective.</p>
+      <a href="#contact" class="cta-button">Contact Us</a>
+    </section>
+  </div>
+
+    <footer class="footer">
+        <div class="section__container footer__container">
+          <div class="footer__col">
+            <h3>Patient<span>Tracker</span></h3>
+            <p>
+              We’re dedicated to supporting you with our patient tracker, making 
+              health management simple and efficient. Our platform helps you easily
+              track appointments, treatments, and progress, all in one place.
+            </p>
+            <p>
+              Trust us to keep you organized and informed, working together to 
+              achieve the best health outcomes for you and your loved ones.
+            </p>
+          </div>
+          <div class="footer__col">
+            <h4>About Us</h4>
+            <p>Home</p>
+            <p>About Us</p>
+            <p>Work With Us</p>
+            <p>Our Blog</p>
+            <p>Terms & Conditions</p>
+          </div>
+          <div class="footer__col">
+            <h4>Services</h4>
+            <p>Search Terms</p>
+            <p>Advance Search</p>
+            <p>Privacy Policy</p>
+            <p>Suppliers</p>
+            <p>Our Stores</p>
+          </div>
+          <div class="footer__col">
+            <h4>Contact Us</h4>
+            <p>
+              <i class="ri-map-pin-2-fill"></i> 123, S E Projects, Patient Tracker
+            </p>
+            <p><i class="ri-mail-fill"></i> Patient@Track.com</p>
+            <p><i class="ri-phone-fill"></i> (+012) 3456 789</p>
+          </div>
+        </div>
+        <div class="footer__bar">
+          <div class="footer__bar__content">
+            <p>Copyright © 2024 Patient Tracker System. All rights reserved.</p>
+            <div class="footer__socials">
+              <span><i class="ri-instagram-line"></i></span>
+              <span><i class="ri-facebook-fill"></i></span>
+              <span><i class="ri-heart-fill"></i></span>
+              <span><i class="ri-twitter-fill"></i></span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </body>
+  </html>
+  

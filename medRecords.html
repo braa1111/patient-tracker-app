@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Medical RecordS Page</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+        :root {
+            --primary-color: #2BACBF;
+            --primary-color: #2BACBF;
+            --primary-color: #2BACBF;
+            --primary-color-dark: #0d846c;
+            --primary-color-light: #e9f7f7;
+            --secondary-color-dark: #11856d;
+            --text-dark: #333333;
+            --text-light: #767268;
+            --white: #ffffff;
+            --max-width: 1200px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  white-space: nowrap;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color: var(--primary-color-dark);
+}
+
+img {
+  width: 100%;
+  display: flex;
+}
+
+        html,
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #f0f2f5;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.737), rgba(1, 0, 0, 0.735)), url("head.jpg");
+            color: var(--white);
+            background-position: center;
+            background-size: cover;
+            padding: 2rem 0;
+        }
+
+        .nav__container {
+            max-width: var(--max-width);
+            margin: auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav__logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .nav__logo span {
+            color: var(--primary-color);
+        }
+
+        .nav__links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .link a {
+            padding: 0.5rem;
+            color: var(--primary-color-light);
+            transition: color 0.3s;
+        }
+
+        .link a:hover {
+            color: var(--primary-color);
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .notification .icon {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.8);
+            transition: color 0.3s;
+        }
+
+        .notification:hover {
+            color: var(--primary-color-dark);
+        }
+
+        .greeting {
+            color: var(--white);
+        }
+
+        .greeting h1 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .greeting p {
+            font-size: 0.75rem;
+        }
+
+        .profile-photo {
+            display: flex;
+            align-items: center;
+
+            padding: 7px 7px;
+            border-radius: 100%;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .profile-photo:hover {
+            background-color: var(--primary-color);
+        }
+
+        .patient-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        .header__container {
+            text-align: center;
+            margin: 2rem auto;
+            color: var(--white);
+        }
+
+        .header__container h1 {
+            font-size: 3.5rem;
+            line-height: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .header__container p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .main-container {
+            max-width: 900px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+            padding: 30px;
+            background-image: linear-gradient(to right,
+                    rgba(0, 0, 0, 0.737),
+                    rgba(1, 0, 0, 0.735)),
+                url("head.jpg");
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .records-section {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .records-box {
+            margin-bottom: 20px;
+        }
+
+        .records-box h2 {
+            margin-top: 0;
+            display: inline;
+        }
+
+        .hamburger {
+            cursor: pointer;
+            font-size: 20px;
+            background: #fff;
+            color: var(--primary-color);
+            border-radius: 4px;
+            border: none;
+            padding: 5px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: color 0.3s ease;
+        }
+
+        .hamburger:hover {
+            background-color:#e9f7f7;
+        }
+
+        .add-new-btn {
+            display: block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .add-new-btn:hover {
+            background-color: var(--primary-color-dark);
+            color: var(--white);
+        }
+
+        .records-list {
+            margin-top: 20px;
+        }
+
+        .record {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: var(--primary-color-light);
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .record-info p {
+            margin: 0;
+        }
+
+        .record-actions button {
+            padding: 5px 10px;
+            font-size: 14px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .edit-btn {
+            background-color: #28a745;
+            color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .details-btn {
+            background-color: #ffc107;
+            color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
+            color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .details-btn:hover{
+            background-color: var(--primary-color-dark);
+        }
+
+        .edit-btn:hover{
+            background-color: var(--secondary-color-dark);
+        }
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+
+        .carousel-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100%;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease;
+            padding: 20px;
+            z-index: 1000;
+            overflow-y: auto;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .carousel-menu.active {
+            left: 0;
+        }
+
+        .menu-close {
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--primary-color);
+            background: none;
+            border: none;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .category {
+            margin-bottom: 20px;
+            text-align: center;
+            cursor: pointer;
+            padding: 10px;
+            background-color: var(--primary-color-light);
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .category:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .category-details {
+            display: none;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .category-details.active {
+            display: block;
+        }
+
+        .category-details h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .category-details p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--text-light);
+        }
+
+        .action-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            font-size: 14px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-right: 10px;
+            text-align: center;
+            transition: opacity 0.3s;
+        }
+
+        .add-btn {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .edit-btn {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        .add-btn:hover,
+        .edit-btn:hover,
+        .delete-btn:hover {
+            opacity: 0.9;
+        }
+
+          .footer {
+      background-color: var(--primary-color-light);
+    }
+
+    .footer__container {
+      display: grid;
+      grid-template-columns: 400px repeat(3, 1fr);
+      padding: 20px;
+      gap: 2rem;
+    }
+
+    .footer__col h3 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .footer__col h3 span {
+      color: var(--secondary-color-dark);
+    }
+
+    .footer__col h4 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .footer__col p {
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .footer__col p:hover {
+      color: var(--primary-color);
+    }
+
+    .footer__col i {
+      color: var(--primary-color);
+    }
+
+    .footer__bar {
+      background-color: var(--primary-color);
+    }
+
+    .footer__bar__content {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .footer__bar__content p {
+      font-size: 0.8rem;
+      color: var(--white);
+    }
+
+    .footer__socials {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1rem;
+      color: var(--white);
+      cursor: pointer;
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav__container">
+            <div class="nav__logo">Patient<span>Tracker</span></div>
+            <nav class="nav__links">
+                <li class="link"><a href="home.html">Home</a></li>
+          <li class="link"><a href="aboutUs.html">About Us</a></li>
+          <li class="link"><a href="services.html">Services</a></li>
+          <li class="link"><a href="pages.html">Pages</a></li>
+          <li class="link"><a href="blog.html">Blog</a></li>
+            </nav>
+            <div class="profile">
+                <div class="notification">
+                    <i class="bi bi-bell icon"></i>
+                </div>
+                <div class="greeting">
+                    <h1>Hi, patient!</h1>
+                    <p>May you alaways be healthy.</p>
+                </div>
+                <div class="profile-photo">
+                    <a href="profile.html">
+                    <img src="profile.webp" alt="Patient" class="patient-avatar"></a>
+                  </div>
+            </div>
+    </header>
+
+    <div class="main-container">
+        <div class="container">
+            <div class="header__container">
+                <h1>Medical RecordS</h1>
+                <p> View and Manage you Medical Records</p>
+            </div>
+            <section class="records-section">
+                <div class="records-box">
+                    <h2>Records</h2>
+                    <button class="hamburger">&#9776;</button>
+                    <button class="add-new-btn">Add New</button>
+                    <div class="records-list">
+                        <div class="record">
+                            <div class="record-info">
+                                <p><strong>Patient name</strong></p>
+                                <p>ID: 12345</p>
+                            </div>
+                            <div class="record-actions">
+                                <button class="edit-btn">Edit</button>
+                                <button class="details-btn">Details</button>
+                                <button class="delete-btn">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="category-details-section">
+                <div id="category-content-placeholder">
+                </div>
+            </section>
+            <section class="category-details-section">
+                <div id="category-content-placeholder">
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="carousel-menu" id="carousel-menu">
+        <button class="menu-close">&#10006;</button>
+        <h2>Health Records</h2>
+        <div class="category" data-category="alergies">
+            <p>Allergies</p>
+        </div>
+        <div class="category" data-category="diagnosis">
+            <p>Diagnosis</p>
+        </div>
+        <div class="category" data-category="laboratory-results">
+            <p>Laboratory Results</p>
+        </div>
+        <div class="category" data-category="operations">
+            <p>Operations</p>
+        </div>
+        <div class="category" data-category="immunization-vaccination">
+            <p>Immunization/Vaccination</p>
+        </div>
+        <div class="category" data-category="radiology-examination">
+            <p>Radiology Examination</p>
+        </div>
+        <div class="category" data-category="vital-signs">
+            <p>Vital Signs</p>
+        </div>
+        <div class="category" data-category="documents">
+            <p>Documents</p>
+        </div>
+        <div class="category" data-category="insurance-details">
+            <p>Insurance Details</p>
+        </div>
+        <div class="category" data-category="medications-profile">
+            <p>Medications Profile</p>
+        </div>
+        <div class="category" data-category="sick-leave">
+            <p>Sick Leave</p>
+        </div>
+    </div>
+
+    <div class="category-details" id="alergies-details">
+        <h3>Allergies Details</h3>
+        <p>Information about allergies.</p>
+    </div>
+    <div class="category-details" id="diagnosis-details">
+        <h3>Diagnosis Details</h3>
+        <p>Information about diagnosis.</p>
+    </div>
+    <div class="category-details" id="laboratory-results-details">
+        <h3>Laboratory Results Details</h3>
+        <p>Information about laboratory results.</p>
+    </div>
+    <div class="category-details" id="operations-details">
+        <h3>Operations Details</h3>
+        <p>Information about operations.</p>
+    </div>
+    <div class="category-details" id="immunization-vaccination-details">
+        <h3>Immunization/Vaccination Details</h3>
+        <p>Information about immunizations and vaccinations.</p>
+    </div>
+    <div class="category-details" id="radiology-examination-details">
+        <h3>Radiology Examination Details</h3>
+        <p>Information about radiology examinations.</p>
+    </div>
+    <div class="category-details" id="vital-signs-details">
+        <h3>Vital Signs Details</h3>
+        <p>Information about vital signs.</p>
+    </div>
+    <div class="category-details" id="documents-details">
+        <h3>Documents Details</h3>
+        <p>Information about documents.</p>
+    </div>
+    <div class="category-details" id="insurance-details-details">
+        <h3>Insurance Details Details</h3>
+        <p>Information about insurance details.</p>
+    </div>
+    <div class="category-details" id="medications-profile-details">
+        <h3>Medications Profile Details</h3>
+        <p>Information about medications profile.</p>
+    </div>
+    <div class="category-details" id="sick-leave-details">
+        <h3>Sick Leave Details</h3>
+        <p>Information about sick leave.</p>
+    </div>
+    </div>
+    
+    <footer class="footer">
+            <div class="section__container footer__container">
+              <div class="footer__col">
+                <h3>Patient<span>Tracker</span></h3>
+                <p>
+                  We’re dedicated to supporting you with our patient tracker, making
+                  health management simple and efficient. Our platform helps you easily
+                  track appointments, treatments, and progress, all in one place.
+                </p>
+                <p>
+                  Trust us to keep you organized and informed, working together to
+                  achieve the best health outcomes for you and your loved ones.
+                </p>
+              </div>
+              <div class="footer__col">
+                <h4>About Us</h4>
+                <p>Home</p>
+                <p>About Us</p>
+                <p>Work With Us</p>
+                <p>Our Blog</p>
+                <p>Terms & Conditions</p>
+              </div>
+              <div class="footer__col">
+                <h4>Services</h4>
+                <p>Search Terms</p>
+                <p>Advance Search</p>
+                <p>Privacy Policy</p>
+                <p>Suppliers</p>
+                <p>Our Stores</p>
+              </div>
+              <div class="footer__col">
+                <h4>Contact Us</h4>
+                <p>
+                  <i class="ri-map-pin-2-fill"></i> 123, S E Projects, Patient Tracker
+                </p>
+                <p><i class="ri-mail-fill"></i> Patient@Track.com</p>
+                <p><i class="ri-phone-fill"></i> (+012) 3456 789</p>
+              </div>
+            </div>
+            <div class="footer__bar">
+              <div class="footer__bar__content">
+                <p>Copyright © 2024 Patient Tracker System. All rights reserved.</p>
+                <div class="footer__socials">
+                  <span><i class="ri-instagram-line"></i></span>
+                  <span><i class="ri-facebook-fill"></i></span>
+                  <span><i class="ri-heart-fill"></i></span>
+                  <span><i class="ri-twitter-fill"></i></span>
+                </div>
+              </div>
+            </div>
+          </footer>
+
+    <script>
+        document.querySelectorAll('.category').forEach(category => {
+            category.addEventListener('click', () => {
+                const contentPlaceholder = document.getElementById('category-content-placeholder');
+                const carouselMenu = document.getElementById('carousel-menu');
+                const categoryName = category.innerText;
+                let detailsHtml = '';
+
+                switch (categoryName) {
+                    case 'Allergies':
+                        detailsHtml = `
+                            <div class="category-details active">
+                                <h3>Allergies</h3>
+                                <p>Allergies refer to abnormal immune responses to substances that are normally harmless. Common allergies include reactions to pollen, dust mites, and certain foods. Proper management and treatment can significantly improve quality of life.</p>
+                                <button class="action-btn add-btn">Add</button>
+                                <button class="action-btn edit-btn">Edit</button>
+                                <button class="action-btn delete-btn">Delete</button>
+                            </div>
+                        `;
+                        break;
+                    case 'Diagnosis':
+                        detailsHtml = `
+                            <div class="category-details active">
+                                <h3>Diagnosis</h3>
+                                <p>Diagnosis involves identifying a disease or condition from its signs and symptoms. Accurate diagnosis is crucial for effective treatment and management. It may involve various tests and evaluations to determine the underlying issue.</p>
+                                <button class="action-btn add-btn">Add</button>
+                                <button class="action-btn edit-btn">Edit</button>
+                                <button class="action-btn delete-btn">Delete</button>
+                            </div>
+                        `;
+                        break;
+                    case 'Laboratory Results':
+                        detailsHtml = `
+                            <div class="category-details active">
+                                <h3>Laboratory Results</h3>
+                                <p>Laboratory results provide vital information about a patient’s health through tests performed on blood, urine, or other samples. These results help in diagnosing conditions, monitoring health status, and guiding treatment decisions.</p>
+                                <button class="action-btn add-btn">Add</button>
+                                <button class="action-btn edit-btn">Edit</button>
+                                <button class="action-btn delete-btn">Delete</button>
+                            </div>
+                        `;
+                        break;
+                    case 'Operations':
+                        detailsHtml = `
+                            <div class="category-details active">
+                                <h3>Operations</h3>
+                                <p>Operations or surgeries are medical procedures involving incisions to treat or diagnose a condition. They are performed by skilled surgeons and may range from minor procedures to major surgeries depending on the condition.</p>
+                                <button class="action-btn add-btn">Add</button>
+                                <button class="action-btn edit-btn">Edit</button>
+                                <button class="action-btn delete-btn">Delete</button>
+                            </div>
+                        `;
+                        break;
+                    case 'Immunization & Vaccination':
+                        detailsHtml = `
+                            <div class="category-details active">
+                                <h3>Immunization & Vaccination</h3>
+                                <p>Immunization involves administering vaccines to protect against specific diseases. Vaccines stimulate the body’s immune response to develop immunity, thereby preventing the spread of infectious diseases.</p>
+                                <button class="action-btn add-btn">Add</button>
+                                <button class="action-btn edit-btn">Edit</button>
+                                <button class="action-btn delete-btn">Delete</button>
+                            </div>
+                        `;
+                        break;
+                    default:
+                        detailsHtml = `
+                            <div class="category-details active">
+                                <h3>${categoryName}</h3>
+                                <p>Details for ${categoryName} will be displayed here.</p>
+                                <button class="action-btn add-btn">Add</button>
+                                <button class="action-btn edit-btn">Edit</button>
+                                <button class="action-btn delete-btn">Delete</button>
+                            </div>
+                        `;
+                        break;
+                }
+
+                contentPlaceholder.innerHTML = detailsHtml;
+
+                carouselMenu.classList.remove('active');
+            });
+        });
+
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.getElementById('carousel-menu').classList.toggle('active');
+        });
+
+        document.querySelector('.menu-close').addEventListener('click', () => {
+            document.getElementById('carousel-menu').classList.remove('active');
+        });
+    </script>
+</body>
+
+</html>

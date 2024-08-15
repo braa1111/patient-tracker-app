@@ -1,0 +1,182 @@
+:root {
+    --primary-color: #2BACBF;
+    --primary-color-dark: #0d846c;
+    --primary-color-light: #e9f7f7;
+    --secondary-color-dark: #11856d;
+    --text-dark: #333333;
+    --text-light: #767268;
+    --white: #ffffff;
+    --max-width: 1200px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0.737),
+            rgba(1, 0, 0, 0.735)), url(assets/head.jpg);
+    background-size: cover;
+
+}
+
+.container {
+    background: #fff;
+    padding: 60px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.container h1 {
+    margin: 0;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    position: relative;
+    bottom: 30px;
+}
+
+.container .header h2 {
+    margin: 5px 0;
+    font-size: 16px;
+    color: var(--primary-color);
+    text-align: left;
+    position: relative;
+    bottom: 30px;
+}
+
+.container .header p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+    position: relative;
+    bottom: 27px;
+}
+
+p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+
+}
+
+.input-group {
+    margin: 15px 0;
+    position: relative;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing: border-box;
+    background: var(--primary-color-light);
+}
+
+.input-group .icon {
+    position: absolute;
+    right: 10px;
+    top: 70%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.forget-password {
+    font-size: 12px;
+    text-align: right;
+    position: relative;
+    bottom: 10px;
+    margin-top: 5px;
+    display: block;
+    color: #2cac83;
+    text-decoration: none;
+}
+
+.forget-password:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    background: var(--primary-color);
+    text-align: middle;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 60%;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.btn:hover {
+    background: var(--primary-color-dark);
+}
+
+.social-buttons {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.social-buttons .icon-button {
+    font-size: 24px;
+    margin: 0 10px;
+    cursor: pointer;
+    color: var(--primary-color);
+    background-color: #333;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.social-buttons .icon-button:hover {
+    color: var(--primary-color-dark);
+}
+
+.social-buttons .icon-button.google {
+    background-color: var(--primary-color-light);
+}
+
+.social-buttons .icon-button.facebook {
+    background-color: var(--primary-color-light);
+}
+
+.social-buttons .icon-button.fingerprint {
+    background-color: var(--primary-color-light);
+}
+
+.signup {
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.signup span {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.signup span:hover {
+    color: var(--primary-color-dark);
+}

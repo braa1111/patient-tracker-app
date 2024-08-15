@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.css" rel="stylesheet">
+    <title>Profile Page</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+        :root {
+            --primary-color: #2BACBF;
+            --primary-color: #2BACBF;
+            --primary-color: #2BACBF;
+            --primary-color-dark: #0d846c;
+            --primary-color-light: #e9f7f7;
+            --secondary-color-dark: #11856d;
+            --text-dark: #333333;
+            --text-light: #767268;
+            --white: #ffffff;
+            --max-width: 1200px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #f0f2f5;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.737), rgba(1, 0, 0, 0.735)), url("head.jpg");
+            color: var(--white);
+            background-position: center;
+            background-size: cover;
+            padding: 2rem 0;
+        }
+
+        .nav__container {
+            max-width: var(--max-width);
+            margin: auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav__logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .nav__logo span {
+            color: var(--primary-color);
+        }
+
+        .nav__links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .link a {
+            padding: 0.5rem;
+            color: var(--primary-color-light);
+            transition: color 0.3s;
+        }
+
+        .link a:hover {
+            color: var(--primary-color);
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .notification .icon {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.8);
+            transition: color 0.3s;
+        }
+
+        .notification:hover {
+            color: var(--primary-color-dark);
+        }
+
+        .greeting {
+            color: var(--white);
+        }
+
+        .greeting h1 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .greeting p {
+            font-size: 0.75rem;
+        }
+
+        .profile-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+
+            padding: 7px 7px;
+            border-radius: 100%;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .profile-header img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .profile-header:hover{
+            background-color: var(--primary-color);
+        }
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            padding-top: 60px;
+        }
+
+        .slide-menu .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        .slide-menu a {
+            display: block;
+            padding: 15px 20px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .slide-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .slide-menu a:hover {
+            background-color: var(--primary-color-light);
+        }
+
+        .slide-menu a i {
+            margin-right: 10px !important;
+            color: var(--primary-color) !important;
+        }
+
+        .slide-menu .submenu {
+            display: none;
+            flex-direction: column;
+            padding-left: 20px;
+        }
+
+        .slide-menu .submenu a {
+            padding: 10px 0;
+            border-bottom: none;
+        }
+
+        .slide-menu.active {
+            right: 0;
+        }
+
+        .slide-menu .submenu.active {
+            margin-left: 30px;
+            display: flex;
+        }
+
+        .main-container {
+            display: none;
+            max-width: 900px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+            padding: 30px;
+            background-image: linear-gradient(to right,
+                    rgba(0, 0, 0, 0.737),
+                    rgba(1, 0, 0, 0.735)),
+                url("head.jpg");
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+
+        .main-container.active {
+            display: block;
+        }
+
+        .profile-content,
+        .notification-settings,
+        .password-manager,
+        .delete-account,
+        .favorite,
+        .payment-method,
+        .privacy-policy,
+        .help {
+            display: none;
+        }
+
+        .profile-content.active,
+        .notification-settings.active,
+        .password-manager.active,
+        .delete-account.active,
+        .favorite.active,
+        .payment-method.active,
+        .privacy-policy.active,
+        .help.active {
+            display: block;
+        }
+       
+.profile-content .profile-photo-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-content img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    cursor: pointer;
+}
+
+.profile-content .edit-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 355px;
+    font-size: 20px;
+    color: var(--primary-color);
+    background-color: var(--primary-color-light);
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.profile-content .info-section {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.profile-content .info-section label {
+    color: var(--white);
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    
+}
+
+.profile-content .info-section input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    border: none;
+    box-sizing: border-box;
+    background-color: var(--primary-color-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-content button {
+    display: block; 
+    width: auto; 
+    max-width: 200px; 
+    margin: 30px auto; 
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-align: center; 
+    font-size: 16px;
+}
+
+.profile-content button:hover {
+    background-color: var(--primary-color-dark);;
+}
+
+.notification-settings .toggle-option {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: relative;
+    cursor: pointer;
+    width: 34px;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 50px;
+    transition: background-color 0.2s;
+    display: inline-block;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: white;
+    transition: transform 0.2s;
+    transform: translateX(4px);
+    top: 4px;
+    left: 4px;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+.slider {
+    transition: background-color 0.3s;
+}
+
+        .password-manager label {
+            display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: var(--white);
+    font-weight: bold;
+        }
+
+        .password-manager input[type="password"] {
+            width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing: border-box;
+    background: var(--primary-color-light);
+        }
+
+        .password-manager .forget-password {
+            font-size: 12px;
+    text-align: right;
+    position: relative;
+    margin-top: 20px;
+    bottom: 10px;
+    display: block;
+    color: var(--primary-color-light);
+    text-decoration: none;
+        }
+
+        .password-manager .forget-password:hover {
+    text-decoration: underline;
+}
+
+        .password-manager button {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .password-manager button:hover {
+            background-color: var(--primary-color-dark);
+        }
+
+       
+        .delete-account p {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--white);
+        }
+        .delete-account button{
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .delete-account button:hover{
+            background-color: var(--primary-color-dark);
+        }
+
+        .favorite h2,
+        .payment-method h2,
+        .privacy-policy h2,
+        .help h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .favorite h4{
+            text-align: center;
+            left: 25%;
+            color: var(--white);
+            padding: 10px;
+        }
+
+        .payment-method .method,
+        .help .faq-item {
+            text-align: center;
+            left: 25%;
+        }
+
+        .payment-method .method {
+            display: block;
+            width: 50%;
+            height: 30%;
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            align-items: center;
+            margin-left: 25%;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .payment-method .method h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .payment-method button{
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-left: 25%;
+            margin-top: 20px;
+        }
+
+        .payment-method button:hover{
+            background-color: var(--primary-color-dark);
+        }
+
+        .payment-method .delete-btn {
+            background-color:#ca1414;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-right: 25%;
+        }
+
+        .payment-method .delete-btn:hover{
+            opacity: 0.8;
+        }
+
+        .privacy-policy p,
+        .privacy-policy h1,
+        .privacy-policy h4,
+        .help .faq-item p {
+            font-size: 16px;
+            color: var(--white);
+            padding: 10px;
+        }
+
+        .help .faq-item {
+            margin-bottom: 20px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav__container">
+            <div class="nav__logo">Patient<span>Tracker</span></div>
+            <nav class="nav__links">
+                <li class="link"><a href="home.html">Home</a></li>
+                <li class="link"><a href="aboutUs.html">About Us</a></li>
+                <li class="link"><a href="services.html">Services</a></li>
+                <li class="link"><a href="pages.html">Pages</a></li>
+                <li class="link"><a href="blog.html">Blog</a></li>
+            </nav>
+            <div class="profile">
+                <div class="notification">
+                    <i class="bi bi-bell icon"></i>
+                </div>
+                <div class="greeting">
+                    <h1>Hi, patient!</h1>
+                    <p>May you alaways be healthy.</p>
+                </div>
+                <div class="profile-header">
+                    <img src="profile.webp" alt="Profile Photo" id="profilePhotoButton">
+                </div>
+            </div>
+    </header>
+
+    <div id="slideMenu" class="slide-menu">
+        <span class="close-btn" id="closeMenu">&times;</span>
+        <a href="#" id="profileLink"><i class="fas fa-user" style="color: #2BACBF; margin-right:10px;"></i>Profile</a>
+        <a href="#" id="settingsLink"><i class="fas fa-cog" style="color: #2BACBF; margin-right:10px;"></i>Settings</a>
+        <div class="submenu" id="settingsSubmenu">
+            <a href="#" id="notificationSettingsLink"><i class="fas fa-bell" style="color: #2BACBF; margin-right:10px;"></i>Notification Settings</a>
+            <a href="#" id="passwordManagerLink"><i class="fas fa-lock" style="color: #2BACBF; margin-right:10px;"></i>Password Manager</a>
+            <a href="#" id="deleteAccountLink"><i class="fas fa-trash" style="color: #2BACBF; margin-right:10px;"></i>Delete Account</a>
+        </div>
+        <a href="#" id="favoriteLink"><i class="fas fa-star" style="color: #2BACBF; margin-right:10px;"></i>Favorite</a>
+        <a href="#" id="paymentMethodLink"><i class="fas fa-credit-card" style="color: #2BACBF; margin-right:10px;"></i>Payment Method</a>
+        <a href="#" id="privacyPolicyLink"><i class="fas fa-shield-alt" style="color: #2BACBF; margin-right:10px;"></i>Privacy Policy</a>
+        <a href="#" id="helpLink"><i class="fas fa-question-circle" style="color: #2BACBF; margin-right:10px;"></i>Help</a>
+        <a href="#" id="logoutLink"><i class="fas fa-sign-out-alt" style="color: #2BACBF; margin-right:10px;"></i>Log Out</a>
+    </div>
+
+
+    <div id="mainContainer" class="main-container">
+        <div id="profileContent" class="profile-content">
+            <div id="profilePhotoWrapper"class="profile-photo-wrapper">
+                <img src="profile.webp" alt="Profile Photo">
+                <i class="fas fa-edit edit-icon"></i>
+            </div>
+            <div class="info-section">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="full-name" placeholder="Enter full name">
+            </div>
+            <div class="info-section">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="number" id="phoneNumber" placeholder="+123-456-7890">
+            </div>
+            <div class="info-section">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="example@example.com">
+            </div>
+            <div class="info-section">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" placeholder="DD/MM/YYYY">
+            </div>
+            <button>Update Profile</button>
+        </div>
+    
+
+        <div id="notificationSettings" class="notification-settings">
+            <div class="toggle-option">
+                <span>General Notification</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="toggle-option">
+                <span>Sound</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="toggle-option">
+                <span>Vibrate</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="toggle-option">
+                <span>Special Offers</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="toggle-option">
+                <span>Payments</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="toggle-option">
+                <span>Promo and Discount</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="toggle-option">
+                <span>Cashback</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+        
+
+    <div id="passwordManager" class="password-manager">
+        <label for="currentPassword">Current Password</label>
+        <input type="password" id="currentPassword" placeholder="Enter current password">
+        <a href="#" class="forget-password">Forget password?</a>
+        <label for="newPassword">New Password</label>
+        <input type="password" id="newPassword" placeholder="Enter new password">
+        <label for="confirmNewPassword">Confirm New Password</label>
+        <input type="password" id="confirmNewPassword" placeholder="Confirm new password">
+        <button>Change Password</button>
+    </div>
+
+    <div id="deleteAccount" class="delete-account">
+        <p>Are you sure you want to delete this account?</p>
+        <button>Delete Account</button>
+    </div>
+        <div id="favorite" class="favorite">
+            <h2>Your Favorites</h2>
+                <h4>Item 1</h4>
+                <h4>Item 2</h4>
+                <h4>Item 3</h4>
+            
+        </div>
+    
+
+        <div id="paymentMethod" class="payment-method">
+            <h2>Payment Methods</h2>
+            <div class="method">
+                <h3>Credit Card</h3>
+                <p>**** **** **** 1234</p>
+            </div>
+            <div class="method">
+                <h3>PayPal</h3>
+                <p>johndoe@example.com</p>
+            </div>
+            <button>Add Payment Method</button>
+            <button class="delete-btn">Delete Payment Method</button>
+        </div>
+    
+        <div id="privacyPolicy" class="privacy-policy">
+            <h1>Privacy Policy</h1>
+            <p>We are committed to protecting your privacy. Here is how we handle your data...</p>
+            <p>At Patient Tracker, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy outlines how we collect, use, and safeguard your data when you use our services.
+            </p>
+                <h4>1. Information We Collect</h4>
+                <p>We collect personal information that you provide to us directly, including but not limited to your name, contact details, medical history, and any other information relevant to your healthcare. We may also collect technical information, such as your IP address, browser type, and device information, to improve our services and provide you with a better user experience.
+                </p>
+                <h4>2. How We Use Your Information</h4>
+                    <p>Your personal information is used to provide, manage, and improve our patient tracking services. This includes scheduling appointments, sending reminders, and delivering personalized healthcare information. We may also use your data for internal purposes such as analytics and service enhancement.
+                    </p>
+                <h4>3. Data Security</h4>
+                    <p>We implement industry-standard security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. Our systems are designed to safeguard your data and ensure its confidentiality.
+                    </p>
+                <h4>4. Sharing Your Information</h4>
+                    <p>We do not sell or rent your personal information to third parties. We may share your data with healthcare providers, partners, or service providers only to the extent necessary to fulfill the services we offer and comply with applicable legal requirements. All such parties are required to uphold the same standards of data protection.
+                    </p>
+                <h4>5. Your Rights</h4>
+                    <p>You have the right to access, correct, or delete your personal information. You can update your information directly through our platform or contact our support team for assistance. We strive to honor your requests promptly, in accordance with applicable data protection laws.
+                    </p>
+                <h4>6. Changes to This Policy</h4>
+                    <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any significant changes and encourage you to review this policy periodically.
+                        </p>
+                <h4>7. Contact Us</h4>
+                    <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at support@patienttracker.com. We are here to assist you and address any inquiries you may have.
+                </p>
+        </div>
+        <div id="help" class="help">
+            <h2>Help & Support</h2>
+            <div class="faq-item">
+                <h3>How do I reset my password?</h3>
+                <p>You can reset your password by clicking on the "Forgot password?" link on the login page.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I contact support?</h3>
+                <p>For support, please contact us at support@example.com.</p>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slideMenu = document.getElementById('slideMenu');
+            const mainContainer = document.getElementById('mainContainer');
+            const settingsLink = document.getElementById('settingsLink');
+            const settingsSubmenu = document.getElementById('settingsSubmenu');
+            const profilePhotoButton =document.getElementById('profilePhotoButton')
+
+            document.getElementById('profilePhotoButton').addEventListener('click', () => {
+                slideMenu.classList.toggle('active');
+            });
+
+            document.getElementById('closeMenu').addEventListener('click', () => {
+                slideMenu.classList.remove('active');
+            });
+
+            settingsLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                settingsSubmenu.classList.toggle('active');
+            });
+
+            const links = {
+                'profileLink': 'profileContent',
+                'notificationSettingsLink': 'notificationSettings',
+                'passwordManagerLink': 'passwordManager',
+                'deleteAccountLink': 'deleteAccount',
+                'favoriteLink': 'favorite',
+                'paymentMethodLink': 'paymentMethod',
+                'privacyPolicyLink': 'privacyPolicy',
+                'helpLink': 'help',
+                'logoutLink': () => alert('Logging out...') // Add logout functionality as needed
+            };
+
+            for (const [linkId, sectionId] of Object.entries(links)) {
+                const link = document.getElementById(linkId);
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    mainContainer.querySelectorAll('.profile-content, .notification-settings, .password-manager, .delete-account, .favorite, .payment-method, .privacy-policy, .help').forEach(section => {
+                        section.classList.remove('active');
+                    });
+
+                    if (typeof sectionId === 'string') {
+                        document.getElementById(sectionId).classList.add('active');
+                    } else {
+                        sectionId(); // For logout link
+                    }
+
+                    mainContainer.classList.add('active');
+                    slideMenu.classList.remove('active');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

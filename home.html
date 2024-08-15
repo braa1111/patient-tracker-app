@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+    rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <title>Home Page</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+:root {
+    --primary-color: #2BACBF;
+    --primary-color: #2BACBF;
+    --primary-color: #2BACBF;
+    --primary-color-dark: #0d846c;
+    --primary-color-light: #e9f7f7;
+    --secondary-color-dark: #11856d;
+    --text-dark: #333333;
+    --text-light: #767268;
+    --white: #ffffff;
+    --max-width: 1200px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  white-space: nowrap;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color: var(--primary-color-dark);
+}
+
+img {
+  width: 100%;
+  display: flex;
+}
+
+html,
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f0f2f5;
+    scroll-behavior: smooth;
+}
+
+header {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.737), rgba(1, 0, 0, 0.735)), url("head.jpg");
+    color: var(--white);
+    background-position: center;
+    background-size: cover;
+    padding: 2rem 0;
+}
+
+.nav__container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.nav__logo span {
+    color: var(--primary-color);
+}
+
+.nav__links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.link a {
+    padding: 0.5rem;
+    color: var(--primary-color-light);
+    transition: color 0.3s;
+}
+
+.link a:hover {
+    color: var(--primary-color);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.notification .icon {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s;
+}
+
+.notification:hover {
+    color: var(--primary-color-dark);
+}
+
+.greeting {
+    color: var(--white);
+}
+
+.greeting h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.greeting p {
+    font-size: 0.75rem;
+}
+
+.profile-photo {
+    display: flex;
+    align-items: center;
+
+    padding: 7px 7px;
+    border-radius: 100%;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.profile-photo:hover {
+    background-color: var(--primary-color);
+}
+
+.patient-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+    .header__container {
+      display: flex;
+      align-items: center;
+      gap: 5rem;
+    }
+
+    .header__container h1 {
+      margin-bottom: 1rem;
+      max-width: 800px;
+      font-size: 3.5rem;
+      line-height: 4rem;
+      color: var(--white);
+    }
+
+    .header__container p {
+      margin-bottom: 2rem;
+      max-width: 600px;
+      color: var(--primary-color-light);
+    }
+
+
+    .notifications-section {
+      background: #ffffff;
+      padding: 40px;
+      margin: 20px auto;
+      margin-top: 80px;
+      max-width: 1200px;
+      border-radius: 8px;
+      box-shadow: 4px 8px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .notifications-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .notifications-title {
+      font-size: 28px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .mark-all-read {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .mark-all-read:hover {
+      color: var(--primary-color-dark);
+    }
+
+    .notification-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .notification-item {
+      background: var(--primary-color-light);
+      border: 2px solid var(--primary-color-light);
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .notification-item:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: translateY(-5px);
+    }
+
+    .notification-item h4 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .notification-item p {
+      font-size: 16px;
+      color: #555;
+      margin: 0;
+    }
+
+    .notification-item .timestamp {
+      font-size: 14px;
+      color: #888;
+      margin-top: 10px;
+      text-align: right;
+    }
+
+    .recent-activity-section {
+      background: #ffffff;
+      padding: 40px;
+      margin: 40px auto;
+      margin-top: 80px;
+      max-width: 1200px;
+      border-radius: 8px;
+      box-shadow: 4px 8px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .recent-activity-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .recent-activity-title {
+      font-size: 28px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .see-all-link {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .see-all-link:hover {
+      color: var(--primary-color-dark);
+    }
+
+    .activity-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .activity-box {
+      background: #ffffff;
+      border: 3px solid var(--primary-color-light);
+      border-radius: 8px;
+      padding: 20px;
+      flex: 1;
+      min-width: 250px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .activity-box:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: translateY(-5px);
+    }
+
+    .activity-box h4 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .activity-box p {
+      font-size: 16px;
+      color: #555;
+      margin: 10px 0 0;
+    }
+
+    .activity-box .timestamp {
+      font-size: 14px;
+      color: #888;
+      margin-top: 10px;
+    }
+
+    .section-title {
+      font-size: 36px;
+      color: var(--text-dark);
+      margin-bottom: 30px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .section-paragraph {
+      font-size: 18px;
+      color: var(--text-light);
+      max-width: 800px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .circle-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .circle {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      color: white;
+      font-size: 20px;
+      margin: 20px;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .circle-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .circle h3 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .description {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .circle:hover {
+      transform: scale(1.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      background-color: rgba(56, 142, 60, 0.7);
+    }
+
+    .history {
+      background-image: linear-gradient(to right,
+          rgba(0, 0, 0, 0.737),
+          rgba(1, 0, 0, 0.735)),
+        url("head.jpg");
+    }
+
+    .medical-record {
+      background-image: linear-gradient(to right,
+          rgba(0, 0, 0, 0.737),
+          rgba(1, 0, 0, 0.735)),
+        url("head.jpg");
+    }
+
+    .appointments {
+      background-image: linear-gradient(to right,
+          rgba(0, 0, 0, 0.737),
+          rgba(1, 0, 0, 0.735)),
+        url("head.jpg");
+    }
+
+    .messages {
+      background-image: linear-gradient(to right,
+          rgba(0, 0, 0, 0.737),
+          rgba(1, 0, 0, 0.735)),
+        url("head.jpg");
+    }
+
+    .footer {
+      background-color: var(--primary-color-light);
+    }
+
+    .footer__container {
+      display: grid;
+      grid-template-columns: 400px repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .footer__col h3 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .footer__col h3 span {
+      color: var(--secondary-color-dark);
+    }
+
+    .footer__col h4 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .footer__col p {
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .footer__col p:hover {
+      color: var(--primary-color);
+    }
+
+    .footer__col i {
+      color: var(--primary-color);
+    }
+
+    .footer__bar {
+      background-color: var(--primary-color);
+    }
+
+    .footer__bar__content {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .footer__bar__content p {
+      font-size: 0.8rem;
+      color: var(--white);
+    }
+
+    .footer__socials {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1rem;
+      color: var(--white);
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="section__container nav__container">
+      <div class="nav__logo">Patient<span>Tracker</span></div>
+      <ul class="nav__links">
+        <li class="link"><a href="home.html">Home</a></li>
+          <li class="link"><a href="aboutUs.html">About Us</a></li>
+          <li class="link"><a href="services.html">Services</a></li>
+          <li class="link"><a href="pages.html">Pages</a></li>
+          <li class="link"><a href="blog.html">Blog</a></li>
+      </ul>
+      <div class="profile">
+        <div class="notification">
+          <i class="bi bi-bell icon"></i>
+        </div>
+        <div class="greeting">
+          <h1>Hi, Patient</h1>
+          <p>May you always be healthy</p>
+        </div>
+        <div class="profile-photo">
+          <a href="profile.html">
+          <img src="profile.webp" alt="Patient" class="patient-avatar"></a>
+        </div>
+      </div>
+    </nav>
+    <div class="section__container header__container" id="home">
+      <div class="header__content">
+        <h1>Your Health, Our Priority</h1>
+        <p>
+          track your health to ensure you're always at your best.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <section class="notifications-section">
+    <div class="notifications-header">
+      <h2 class="notifications-title">Notifications</h2>
+      <a href="#mark-all-read" class="mark-all-read">Mark All as Read</a>
+    </div>
+    <ul class="notification-list">
+      <li class="notification-item">
+        <h4>Upcoming Appointment Reminder</h4>
+        <p>Your appointment with Dr. Brown is scheduled for August 20, 2024, at 2:00 PM. Please remember to bring any
+          relevant documents.</p>
+        <p class="timestamp">Posted on August 10, 2024</p>
+      </li>
+      <li class="notification-item">
+        <h4>Test Results Available</h4>
+        <p>Your latest blood test results are now available. Please review them under 'Test Results' in your profile.
+        </p>
+        <p class="timestamp">Posted on August 9, 2024</p>
+      </li>
+      <li class="notification-item">
+        <h4>Medication Reminder</h4>
+        <p>Don't forget to take your prescribed medication today. For more details, check your 'Medications' section.
+        </p>
+        <p class="timestamp">Posted on August 7, 2024</p>
+      </li>
+    </ul>
+  </section>
+  <section class="recent-activity-section">
+    <div class="recent-activity-header">
+      <h2 class="recent-activity-title">Recent Activity</h2>
+      <a href="#all-activities" class="see-all-link">See All Activities</a>
+    </div>
+    <div class="activity-boxes">
+      <div class="activity-box">
+        <h4>Appointment Scheduled</h4>
+        <p>Your appointment with Dr. Smith has been scheduled for August 15, 2024, at 10:00 AM.</p>
+        <p class="timestamp">Posted on August 5, 2024</p>
+      </div>
+      <div class="activity-box">
+        <h4>Medical Record Updated</h4>
+        <p>Your recent test results have been added to your medical record. Review them under 'Medical Records'.</p>
+        <p class="timestamp">Posted on August 4, 2024</p>
+      </div>
+      <div class="activity-box">
+        <h4>Test Results Reviewed</h4>
+        <p>Your latest lab test results have been reviewed and are now available for you to view. Check under 'Test
+          Results'.</p>
+        <p class="timestamp">Posted on August 3, 2024</p>
+      </div>
+      <div class="activity-box">
+        <h4>Message from Doctor</h4>
+        <p>Dr. Lee has sent you a message regarding your recent consultation. Check your 'Messages' for more
+          information.</p>
+        <p class="timestamp">Posted on August 2, 2024</p>
+      </div>
+    </div>
+  </section>
+  <section class="circle-section">
+    <h2 class="section-title">Manage Your Health</h2>
+    <p class="section-paragraph">
+      Easily track and manage your health with our platform. View your medical history,
+      manage records, schedule appointments, and connect with your healthcare team—all
+      in one place.
+    </p>
+
+    <a href="history.html" class="circle-link">
+    <div class="circle history">
+      <div>
+        <h3>History</h3>
+        <p class="description">Review your health history and past records.</p>
+      </div>
+    </div>
+  </a>
+
+    <a href="medRecords.html" class="circle-link">
+    <div class="circle medical-record">
+      <div>
+        <h3>Medical Record</h3>
+        <p class="description">Access and manage your medical records easily.</p>
+      </div>
+    </div>
+  </a>
+
+    <a href="appointment.html" class="circle-link">
+    <div class="circle appointments">
+      <div>
+        <h3>Appointments</h3>
+        <p class="description">Schedule and track your medical appointments.</p>
+      </div>
+    </div>
+  </a>
+
+    <a href="messages.html" class="circle-link">
+    <div class="circle messages">
+      <div>
+        <h3>Messages</h3>
+        <p class="description">Communicate with your healthcare providers.</p>
+      </div>
+    </div>
+    </a>
+  </section>
+
+
+  <div id="slideMenu" class="slide-menu">
+    <span class="close-btn" id="closeMenu">&times;</span>
+    <a href="#" id="profileLink"><i class="fas fa-user" style="color: #2BACBF; margin-right:10px;"></i>Profile</a>
+    <a href="#" id="settingsLink"><i class="fas fa-cog" style="color: #2BACBF; margin-right:10px;"></i>Settings</a>
+    <div class="submenu" id="settingsSubmenu">
+        <a href="#" id="notificationSettingsLink"><i class="fas fa-bell" style="color: #2BACBF; margin-right:10px;"></i>Notification Settings</a>
+        <a href="#" id="passwordManagerLink"><i class="fas fa-lock" style="color: #2BACBF; margin-right:10px;"></i>Password Manager</a>
+        <a href="#" id="deleteAccountLink"><i class="fas fa-trash" style="color: #2BACBF; margin-right:10px;"></i>Delete Account</a>
+    </div>
+    <a href="#" id="favoriteLink"><i class="fas fa-star" style="color: #2BACBF; margin-right:10px;"></i>Favorite</a>
+    <a href="#" id="paymentMethodLink"><i class="fas fa-credit-card" style="color: #2BACBF; margin-right:10px;"></i>Payment Method</a>
+    <a href="#" id="privacyPolicyLink"><i class="fas fa-shield-alt" style="color: #2BACBF; margin-right:10px;"></i>Privacy Policy</a>
+    <a href="#" id="helpLink"><i class="fas fa-question-circle" style="color: #2BACBF; margin-right:10px;"></i>Help</a>
+    <a href="#" id="logoutLink"><i class="fas fa-sign-out-alt" style="color: #2BACBF; margin-right:10px;"></i>Log Out</a>
+</div>
+
+
+<div id="mainContainer" class="main-container">
+    <div id="profileContent" class="profile-content">
+        <div id="profilePhotoWrapper"class="profile-photo-wrapper">
+            <img src="profile.webp" alt="Profile Photo">
+            <i class="fas fa-edit edit-icon"></i>
+        </div>
+        <div class="info-section">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="full-name" placeholder="Enter full name">
+        </div>
+        <div class="info-section">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="number" id="phoneNumber" placeholder="+123-456-7890">
+        </div>
+        <div class="info-section">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="example@example.com">
+        </div>
+        <div class="info-section">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" placeholder="DD/MM/YYYY">
+        </div>
+        <button>Update Profile</button>
+    </div>
+
+
+    <div id="notificationSettings" class="notification-settings">
+        <div class="toggle-option">
+            <span>General Notification</span>
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="toggle-option">
+            <span>Sound</span>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="toggle-option">
+            <span>Vibrate</span>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="toggle-option">
+            <span>Special Offers</span>
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="toggle-option">
+            <span>Payments</span>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="toggle-option">
+            <span>Promo and Discount</span>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="toggle-option">
+            <span>Cashback</span>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+    
+
+<div id="passwordManager" class="password-manager">
+    <label for="currentPassword">Current Password</label>
+    <input type="password" id="currentPassword" placeholder="Enter current password">
+    <a href="#" class="forget-password">Forget password?</a>
+    <label for="newPassword">New Password</label>
+    <input type="password" id="newPassword" placeholder="Enter new password">
+    <label for="confirmNewPassword">Confirm New Password</label>
+    <input type="password" id="confirmNewPassword" placeholder="Confirm new password">
+    <button>Change Password</button>
+</div>
+
+<div id="deleteAccount" class="delete-account">
+    <p>Are you sure you want to delete this account?</p>
+    <button>Delete Account</button>
+</div>
+    <div id="favorite" class="favorite">
+        <h2>Your Favorites</h2>
+            <h4>Item 1</h4>
+            <h4>Item 2</h4>
+            <h4>Item 3</h4>
+        
+    </div>
+
+
+    <div id="paymentMethod" class="payment-method">
+        <h2>Payment Methods</h2>
+        <div class="method">
+            <h3>Credit Card</h3>
+            <p>**** **** **** 1234</p>
+        </div>
+        <div class="method">
+            <h3>PayPal</h3>
+            <p>johndoe@example.com</p>
+        </div>
+        <button>Add Payment Method</button>
+        <button class="delete-btn">Delete Payment Method</button>
+    </div>
+
+    <div id="privacyPolicy" class="privacy-policy">
+        <h1>Privacy Policy</h1>
+        <p>We are committed to protecting your privacy. Here is how we handle your data...</p>
+        <p>At Patient Tracker, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy outlines how we collect, use, and safeguard your data when you use our services.
+        </p>
+            <h4>1. Information We Collect</h4>
+            <p>We collect personal information that you provide to us directly, including but not limited to your name, contact details, medical history, and any other information relevant to your healthcare. We may also collect technical information, such as your IP address, browser type, and device information, to improve our services and provide you with a better user experience.
+            </p>
+            <h4>2. How We Use Your Information</h4>
+                <p>Your personal information is used to provide, manage, and improve our patient tracking services. This includes scheduling appointments, sending reminders, and delivering personalized healthcare information. We may also use your data for internal purposes such as analytics and service enhancement.
+                </p>
+            <h4>3. Data Security</h4>
+                <p>We implement industry-standard security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. Our systems are designed to safeguard your data and ensure its confidentiality.
+                </p>
+            <h4>4. Sharing Your Information</h4>
+                <p>We do not sell or rent your personal information to third parties. We may share your data with healthcare providers, partners, or service providers only to the extent necessary to fulfill the services we offer and comply with applicable legal requirements. All such parties are required to uphold the same standards of data protection.
+                </p>
+            <h4>5. Your Rights</h4>
+                <p>You have the right to access, correct, or delete your personal information. You can update your information directly through our platform or contact our support team for assistance. We strive to honor your requests promptly, in accordance with applicable data protection laws.
+                </p>
+            <h4>6. Changes to This Policy</h4>
+                <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any significant changes and encourage you to review this policy periodically.
+                    </p>
+            <h4>7. Contact Us</h4>
+                <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at support@patienttracker.com. We are here to assist you and address any inquiries you may have.
+            </p>
+    </div>
+    <div id="help" class="help">
+        <h2>Help & Support</h2>
+        <div class="faq-item">
+            <h3>How do I reset my password?</h3>
+            <p>You can reset your password by clicking on the "Forgot password?" link on the login page.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How do I contact support?</h3>
+            <p>For support, please contact us at support@example.com.</p>
+        </div>
+    </div>
+</div>
+</div>
+
+
+  <footer class="footer">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <h3>Patient<span>Tracker</span></h3>
+        <p>
+          We’re dedicated to supporting you with our patient tracker, making
+          health management simple and efficient. Our platform helps you easily
+          track appointments, treatments, and progress, all in one place.
+        </p>
+        <p>
+          Trust us to keep you organized and informed, working together to
+          achieve the best health outcomes for you and your loved ones.
+        </p>
+      </div>
+      <div class="footer__col">
+        <h4>About Us</h4>
+        <p>Home</p>
+        <p>About Us</p>
+        <p>Work With Us</p>
+        <p>Our Blog</p>
+        <p>Terms & Conditions</p>
+      </div>
+      <div class="footer__col">
+        <h4>Services</h4>
+        <p>Search Terms</p>
+        <p>Advance Search</p>
+        <p>Privacy Policy</p>
+        <p>Suppliers</p>
+        <p>Our Stores</p>
+      </div>
+      <div class="footer__col">
+        <h4>Contact Us</h4>
+        <p>
+          <i class="ri-map-pin-2-fill"></i> 123, S E Projects, Patient Tracker
+        </p>
+        <p><i class="ri-mail-fill"></i> Patient@Track.com</p>
+        <p><i class="ri-phone-fill"></i> (+012) 3456 789</p>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <div class="footer__bar__content">
+        <p>Copyright © 2024 Patient Tracker System. All rights reserved.</p>
+        <div class="footer__socials">
+          <span><i class="ri-instagram-line"></i></span>
+          <span><i class="ri-facebook-fill"></i></span>
+          <span><i class="ri-heart-fill"></i></span>
+          <span><i class="ri-twitter-fill"></i></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
+
+

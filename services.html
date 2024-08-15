@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>services Page</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #2BACBF;
+ --primary-color-dark: #0d846c;
+  --primary-color-light: #e9f7f7;
+  --secondary-color-dark:#11856d;
+  --text-dark: #333333;
+  --text-light: #767268;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  white-space: nowrap;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color: var(--primary-color-dark);
+}
+
+img {
+  width: 100%;
+  display: flex;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.737),
+      rgba(1, 0, 0, 0.735)
+    ),
+    url("head.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.nav__container {
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.nav__logo span {
+  color: var(--primary-color);
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.link a {
+  padding: 0.5rem;
+  color: var(--primary-color-light);
+}
+
+.link a:hover {
+    color: var(--primary-color);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.header__container h1 {
+   
+    margin-left: 1rem;
+  margin-bottom: 1rem;
+  max-width: 800px;
+  font-size: 3.5rem;
+  line-height: 4rem;
+  color: var(--white);
+}
+
+.header__container p {
+margin-left: 1rem;
+  margin-bottom: 1rem;
+  max-width: 800px;
+  color: var(--primary-color-light);
+}
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .notification .icon {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.8);
+            transition: color 0.3s;
+        }
+
+        .notification:hover {
+            color: var(--primary-color-dark);
+        }
+
+        .greeting {
+            color: var(--white);
+        }
+
+        .greeting h1 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .greeting p {
+            font-size: 0.75rem;
+        }
+
+        .profile-photo {
+            display: flex;
+            align-items: center;
+
+            padding: 7px 7px;
+            border-radius: 100%;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .profile-photo:hover {
+            background-color: var(--primary-color);
+        }
+
+        .patient-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        .content {
+          position: relative;
+            padding: 40px 20px;
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+
+        .service {
+          position: relative;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            padding: 10px;
+            margin: 20px 0;
+            transition: box-shadow 0.3s ease-in-out;
+            margin-bottom: 20px;
+            margin-right: 30px;
+            margin-left: 30px;
+            width: 60%;
+            z-index: 2;
+        }
+
+        .service:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .service ul {
+            list-style-type: disc;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        .service h2 {
+            color: #333;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background: var(--primary-color-dark);
+        }
+
+        .btn-container {
+            margin-top: 20px;
+        }
+
+        .btn-container .btn {
+            margin-right: 10px;
+        }
+
+        .circle-background {
+            position: absolute;
+            right: -20px; 
+            top: 770px; 
+            width: 250px;
+            height: 250px;
+            background: var(--primary-color-light); 
+            border-radius: 10%;
+            z-index: 1; 
+        }
+
+        .circle-background2 {
+            position: absolute;
+            right: 50px; 
+            top: 10px; 
+            width: 500px;
+            height: 250px;
+            background: var(--primary-color); 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            border-radius: 10%;
+            z-index: 1; 
+        }
+        .circle-background2 p{
+          margin: 40px;
+          margin-left: 120px;
+          margin-top: 20px;
+          text-align: left;
+          
+        }
+
+        .circle-background2:hover{
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.50);
+        }
+
+        .circle-foreground {
+            position: absolute;
+            right: -300px; 
+            top: 90px; 
+            width: 350px; 
+            height: 350px;
+            border-radius: 50%;
+            overflow: hidden;
+
+        }
+
+        .circle-foreground img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .footer {
+  background-color: var(--primary-color-light);
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 400px repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer__col h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.footer__col h3 span {
+  color: var(--secondary-color-dark);
+}
+
+.footer__col h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.footer__col p {
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer__col p:hover {
+  color: var(--primary-color);
+}
+
+.footer__col i {
+  color: var(--primary-color);
+}
+
+.footer__bar {
+  background-color: var(--primary-color);
+}
+
+.footer__bar__content {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer__bar__content p {
+  font-size: 0.8rem;
+  color: var(--white);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+  color: var(--white);
+  cursor: pointer;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="section__container nav__container">
+          <div class="nav__logo">Patient<span>Tracker</span></div>
+          <ul class="nav__links">
+            <li class="link"><a href="home.html">Home</a></li>
+              <li class="link"><a href="aboutUs.html">About Us</a></li>
+              <li class="link"><a href="services.html">Services</a></li>
+              <li class="link"><a href="pages.html">Pages</a></li>
+              <li class="link"><a href="blog.html">Blog</a></li>
+          </ul>
+          <div class="profile">
+            <div class="notification">
+                <i class="bi bi-bell icon"></i>
+            </div>
+            <div class="greeting">
+                <h1>Hi, patient!</h1>
+                <p>May you alaways be healthy.</p>
+            </div>
+          <div class="profile-photo">
+                    <img src="profile.webp" alt="Profile Photo" class="patient-avatar" />
+                </div>
+        </nav>
+        <div class="section__container header__container" id="home">
+          <div class="header__content">
+            <h1>Services</h1>
+        <p>
+            At Patient Tracker, we offer a comprehensive suite of services designed to streamline
+            and enhance your healthcare experience. Our solutions are tailored to meet your
+            needs, from managing medications and tracking lab results to ensuring seamless 
+            communication with your healthcare providers. Explore our specialized systems, 
+            including our Pharmacy System, Laboratory System, and Communication System, 
+            each crafted to offer you convenience, efficiency, and peace of mind. Discover 
+            how our services can simplify your health management and support your journey 
+            towards better health.
+        </p>
+          </div>
+            </div>
+    </header>
+
+    <div class="content">
+      <div class="circle-background2">
+        <p>
+          The Pharmacy System is designed to ensure that you never miss a dose and that your medication management
+          is as simple and stress-free as possible.
+      </p>
+      </div>
+        <section class="service">
+            <h2>Pharmacy System</h2>
+            <p>
+                Our Pharmacy System integrates seamlessly with your health records to provide comprehensive medication
+                management. With this system, you can:
+            </p>
+            <ul>
+                <li>View your current and past prescriptions with ease.</li>
+                <li>Request medication refills directly from the system.</li>
+                <li>Track your medication history and receive reminders for upcoming doses.</li>
+                <li>Get alerts for potential drug interactions and access detailed medication information.</li>
+                <li>Manage your pharmacy preferences and contact your pharmacy directly from the system.</li>
+            </ul>
+            <div class="btn-container">
+                <a href="#pharmacy" class="btn">Learn More</a>
+                <a href="#demo" class="btn">Request a Demo</a>
+                <a href="#support" class="btn">Contact Support</a>
+            </div>
+            <div class="circle-foreground">
+                <img src="1711083630966-removebg-preview.png" alt="Pharmacy Image" />
+            </div>
+        </section>
+      </div>
+<div class="content">
+  <div class="circle-background2">
+    <p>
+      System ensures that all your lab data is stored securely and is easily accessible, providing you
+      with peace of mind and helping you stay on top of your health.
+  </p>
+  </div>
+        <section class="service">
+            <h2>Laboratory System</h2>
+            <p>
+                The Laboratory System is tailored to simplify the process of managing and tracking lab tests and
+                results. Key features include:
+            </p>
+            <ul>
+                <li>Schedule lab tests and appointments with a few clicks.</li>
+                <li>Receive and view test results securely online.</li>
+                <li>Set reminders for upcoming tests and follow-up appointments.</li>
+                <li>Access a detailed history of all your lab tests and results.</li>
+                <li>Get notifications about any abnormalities or urgent results.</li>
+            </ul>
+            <div class="btn-container">
+                <a href="#laboratory" class="btn">Learn More</a>
+                <a href="#demo" class="btn">Request a Demo</a>
+                <a href="#support" class="btn">Contact Support</a>
+            </div>
+            <div class="circle-foreground">
+                <img src="analysis-of-laboratory-test-data-free-vector.jpg" alt="Laboratory Image" />
+            </div>
+        </section>
+        </div>
+<div class="content">
+  <div class="circle-background2">
+    <p>
+      The Communication System helps maintain an open line of communication with your healthcare providers,
+      ensuring that you are always informed and your needs are met efficiently.
+  </p>
+  </div>
+        <section class="service">
+            <h2>Communication System</h2>
+            <p>
+                Our Communication System is designed to facilitate secure and effective interactions between you and
+                your healthcare providers. Features include:
+            </p>
+            <ul>
+                <li>Send and receive secure messages with your healthcare team.</li>
+                <li>Schedule and manage your appointments effortlessly.</li>
+                <li>Receive important updates and notifications regarding your health and treatment.</li>
+                <li>Access a detailed history of all communications and appointments.</li>
+                <li>Ensure confidentiality and privacy in all your interactions.</li>
+            </ul>
+            <div class="btn-container">
+                <a href="#communication" class="btn">Learn More</a>
+                <a href="#demo" class="btn">Request a Demo</a>
+                <a href="#support" class="btn">Contact Support</a>
+            </div>
+            <div class="circle-foreground">
+                <img src="MobileHealth-removebg-preview (1).png" alt="Pharmacy Image" />
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="section__container footer__container">
+          <div class="footer__col">
+            <h3>Patient<span>Tracker</span></h3>
+            <p>
+              We’re dedicated to supporting you with our patient tracker, making 
+              health management simple and efficient. Our platform helps you easily
+              track appointments, treatments, and progress, all in one place.
+            </p>
+            <p>
+              Trust us to keep you organized and informed, working together to 
+              achieve the best health outcomes for you and your loved ones.
+            </p>
+          </div>
+          <div class="footer__col">
+            <h4>About Us</h4>
+            <p>Home</p>
+            <p>About Us</p>
+            <p>Work With Us</p>
+            <p>Our Blog</p>
+            <p>Terms & Conditions</p>
+          </div>
+          <div class="footer__col">
+            <h4>Services</h4>
+            <p>Search Terms</p>
+            <p>Advance Search</p>
+            <p>Privacy Policy</p>
+            <p>Suppliers</p>
+            <p>Our Stores</p>
+          </div>
+          <div class="footer__col">
+            <h4>Contact Us</h4>
+            <p>
+              <i class="ri-map-pin-2-fill"></i> 123, S E Projects, Patient Tracker
+            </p>
+            <p><i class="ri-mail-fill"></i> Patient@Track.com</p>
+            <p><i class="ri-phone-fill"></i> (+012) 3456 789</p>
+          </div>
+        </div>
+        <div class="footer__bar">
+          <div class="footer__bar__content">
+            <p>Copyright © 2024 Patient Tracker System. All rights reserved.</p>
+            <div class="footer__socials">
+              <span><i class="ri-instagram-line"></i></span>
+              <span><i class="ri-facebook-fill"></i></span>
+              <span><i class="ri-heart-fill"></i></span>
+              <span><i class="ri-twitter-fill"></i></span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </body>
+  </html>
+  

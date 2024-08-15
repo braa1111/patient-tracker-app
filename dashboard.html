@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+      rel="stylesheet" 
+    />
+    <link 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="dash.css" />
+    <title>Patient Tracker</title>
+  </head>
+  <body>
+    <header>
+      <nav class="section__container nav__container">
+        <div class="nav__logo">Patient<span>Tracker</span></div>
+        <ul class="nav__links">
+         <li class="link"><a href="home.html">Home</a></li>
+          <li class="link"><a href="aboutUs.html">About Us</a></li>
+          <li class="link"><a href="services.html">Services</a></li>
+          <li class="link"><a href="pages.html">Pages</a></li>
+          <li class="link"><a href="blog.html">Blog</a></li>
+        </ul>
+        <button class="btn"><a href="login.html">Log In</a></button>
+      </nav>
+      <div class="section__container header__container" id="home">
+        <div class="header__content">
+          <h1>Providing an Exceptional Patient Experience</h1>
+          <p>
+            Welcome, where exceptional patient experiences are our priority. Find a 
+            doctor easily from your phone. With compassionate care, state-of-the-art
+            facilities, and a patient-centered approach, we're dedicated to your 
+            well-being. 
+          </p>
+          <button class="btn">See Services</button>
+        </div>
+        <div class="header__form">
+          <form>
+            <h4>Book Now</h4>
+            <button class="btn form__btn">Book Appointment</button>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <section class="section__container service__container" id="service">
+      <div class="service__header">
+        <div class="service__header__content">
+          <h2 class="section__header">Health services</h2>
+          <p>
+            Beyond simply providing medical care, our commitment lies in
+            delivering unparalleled service tailored to your unique needs.
+          </p>
+        </div>
+        <button class="service__btn">All Services</button>
+      </div>
+      <div class="service__grid">
+        <div class="service__card">
+          <span><i class="bi bi-ear"></i></span>
+          <h4>Ear Health</h4>
+          <p>
+            Ensure optimal hearing with our Ear Health services. Comprehensive 
+            care for your ears' health.
+          </p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="service__card">
+          <span><i class="ri-lungs-line"></i></span>
+          <h4>Lungs Health</h4>
+          <p>
+            Breathe easier with our Lung Health services. Comprehensive care for
+            all your respiratory needs.
+          </p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="service__card">
+          <span><i class="fas fa-tooth"></i></span>
+          <h4>Teeth Health</h4>
+          <p>
+            Maintain a bright smile with our Dental Health services. Quality care
+            for your teeth and gums.
+          </p>
+          <a href="#">Learn More</a>
+        </div>
+      </div>
+    </section>
+    <section class="section__container about__container" id="about">
+      <div class="about__content">
+        <h2 class="section__header">About Us</h2>
+        <p>
+          Welcome to Patient Tracker, where managing your health is made easy. 
+          Our platform keeps all your health information in one secure place,
+          helping you track and organize your ear, eye, lung,dental health and 
+          other services.
+        </p>
+        <p>
+          With features like personalized reminders and comprehensive health records, 
+          we help you stay on top of your appointments and treatments. No more missed 
+          appointments or forgotten treatments—our platform helps you stay organized
+           and proactive about your health.
+        </p>
+        <p>
+          At Patient Tracker, we are committed to enhancing your health management 
+          experience. Our goal is to provide you with the tools and support needed to
+          maintain a healthier and more organized life. Trust us to help you navigate 
+          your health journey with confidence and ease.
+        </p>
+      </div>
+      <div class="about__image">
+        <img src="assets/abouts.jpg" alt="about" />
+      </div>
+    </section>
+
+    <section class="section__container why__container" id="blog">
+      <div class="why__image">
+        <img src="assets/choose-us.jpg" alt="why choose us" />
+      </div>
+      <div class="why__content">
+        <h2 class="section__header">Our Key Advantages</h2>
+        <p>
+           we are dedicated to enhancing your overall well-being with our innovative
+           health management platform. Our all-in-one health tracker simplifies the 
+           process of managing your health by consolidating appointments, treatments, 
+           and progress into a single, accessible platform.
+        </p>
+        <div class="why__grid">
+          <span><i class="ri-hand-heart-line"></i></span>
+          <div>
+            <h4>All-in-One Health Tracker</h4>
+            <p>
+              Manage your appointments, treatments, and health progress 
+              all in one place for streamlined care.
+            </p>
+          </div>
+          <span><i class="fas fa-user-md"></i></span>
+          <div>
+            <h4>Effortless Doctor Search</h4>
+            <p>
+              Quickly find and connect with the right healthcare professionals 
+              through our easy-to-use search feature.
+            </p>
+          </div>
+          <span><i class="fas fa-clock"></i></span>
+          <div>
+            <h4>Timely Reminders</h4>
+            <p>
+              Stay on top of your health with personalized reminders for 
+              appointments and treatments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container doctors__container" id="pages">
+      <div class="doctors__header">
+        <div class="doctors__header__content">
+          <h2 class="section__header">Our Special Doctors</h2>
+          <p>
+            We take pride in our exceptional team of doctors, each a specialist
+            in their respective fields.
+          </p>
+        </div>
+        <div class="doctors__nav">
+          <span><i class="ri-arrow-left-line"></i></span>
+          <span><i class="ri-arrow-right-line"></i></span>
+        </div>
+      </div>
+      <div class="doctors__grid">
+        <div class="doctors__card">
+          <div class="doctors__card__image">
+            <img src="assets/doctor-1.jpg" alt="doctor" />
+            <div class="doctors__socials">
+              <span><i class="ri-instagram-line"></i></span>
+              <span><i class="ri-facebook-fill"></i></span>
+              <span><i class="ri-heart-fill"></i></span>
+              <span><i class="ri-twitter-fill"></i></span>
+            </div>
+          </div>
+          <h4>Dr. Emily Smith</h4>
+          <p>Cardiologist</p>
+        </div>
+        <div class="doctors__card">
+          <div class="doctors__card__image">
+            <img src="assets/doctor-2.jpg" alt="doctor" />
+            <div class="doctors__socials">
+              <span><i class="ri-instagram-line"></i></span>
+              <span><i class="ri-facebook-fill"></i></span>
+              <span><i class="ri-heart-fill"></i></span>
+              <span><i class="ri-twitter-fill"></i></span>
+            </div>
+          </div>
+          <h4>Dr. James Anderson</h4>
+          <p>Neurosurgeon</p>
+        </div>
+        <div class="doctors__card">
+          <div class="doctors__card__image">
+            <img src="assets/doctor-3.jpg" alt="doctor" />
+            <div class="doctors__socials">
+              <span><i class="ri-instagram-line"></i></span>
+              <span><i class="ri-facebook-fill"></i></span>
+              <span><i class="ri-heart-fill"></i></span>
+              <span><i class="ri-twitter-fill"></i></span>
+            </div>
+          </div>
+          <h4>Dr. Michael Lee</h4>
+          <p>Dermatologist</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <h3>Patient<span>Tracker</span></h3>
+          <p>
+            We’re dedicated to supporting you with our patient tracker, making 
+            health management simple and efficient. Our platform helps you easily
+            track appointments, treatments, and progress, all in one place.
+          </p>
+          <p>
+            Trust us to keep you organized and informed, working together to 
+            achieve the best health outcomes for you and your loved ones.
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>About Us</h4>
+          <p>Home</p>
+          <p>About Us</p>
+          <p>Work With Us</p>
+          <p>Our Blog</p>
+          <p>Terms & Conditions</p>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <p>Search Terms</p>
+          <p>Advance Search</p>
+          <p>Privacy Policy</p>
+          <p>Suppliers</p>
+          <p>Our Stores</p>
+        </div>
+        <div class="footer__col">
+          <h4>Contact Us</h4>
+          <p>
+            <i class="ri-map-pin-2-fill"></i> 123, S E Projects, Patient Tracker
+          </p>
+          <p><i class="ri-mail-fill"></i> Patient@Track.com</p>
+          <p><i class="ri-phone-fill"></i> (+012) 3456 789</p>
+        </div>
+      </div>
+      <div class="footer__bar">
+        <div class="footer__bar__content">
+          <p>Copyright © 2024 Patient Tracker System. All rights reserved.</p>
+          <div class="footer__socials">
+            <span><i class="ri-instagram-line"></i></span>
+            <span><i class="ri-facebook-fill"></i></span>
+            <span><i class="ri-heart-fill"></i></span>
+            <span><i class="ri-twitter-fill"></i></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
